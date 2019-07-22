@@ -7,8 +7,8 @@
 		</Console>
 
 		<RollingFile name="InfoFile"
-			fileName="${bundle:system:log.path}/info.log"
-			filePattern="${bundle:system:log.path}/${date:yyyy/MM/dd}/info-%d{yyyy-MM-dd}-%i.log">
+			fileName="${bundle:system:system.log.path}/info.log"
+			filePattern="${bundle:system:system.log.path}/${date:yyyy/MM/dd}/info-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout
 				pattern="[%level][%d{yyyy-MM-dd HH:mm:ss}] %l%n%msg%n" />
 			<Policies>
