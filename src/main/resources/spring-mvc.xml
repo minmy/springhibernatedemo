@@ -27,10 +27,10 @@
 	</bean>
 
 	<!-- Multipart Resolver -->
-	<!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
-		<!--&lt;!&ndash; 100M &ndash;&gt;-->
-		<!--<property name="maxUploadSize" value="104857600" />-->
-	<!--</bean>-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 100M -->
+		<property name="maxUploadSize" value="104857600" />
+	</bean>
 
 	<!-- Handler Exception Resolver -->
 	<!--<bean class="cn.sini.cgb.common.handler.SpringMvcHandlerExceptionResolver" />-->

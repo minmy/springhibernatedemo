@@ -49,7 +49,7 @@
     </bean>
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 
-    <!-- Import Other Spring File -->
-    <!--<import resource="spring-security.xml"/>-->
+<!--     Import Other Spring File-->
+    <import resource="spring-security.xml"/>
     <!--<import resource="spring-job.xml"/>-->
 </beans>
