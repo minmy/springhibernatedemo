@@ -7,10 +7,7 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Getter
@@ -52,7 +49,8 @@ public class User extends AbstractEntity implements UserDetails {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @TableGenerator(name = TABLE_NAME, table = SEQUENCE_TABLE, pkColumnValue = TABLE_NAME)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = TABLE_NAME)
     private Long id;
     private String username;
     private String password;
