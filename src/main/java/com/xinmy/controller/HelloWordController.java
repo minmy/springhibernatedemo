@@ -16,4 +16,9 @@ public class HelloWordController {
     public String helloWord() {
         return "index";
     }
+
+    @RequestMapping("login")
+    public String login() {
+        return "login";
+    }
 }
