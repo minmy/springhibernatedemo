@@ -51,18 +51,18 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		if (user == null) {
 			throw new CustomAuthenticationException("登录失败，帐号或密码错误");
 		}
-		if (!user.isEnabled()) {
-			throw new CustomAuthenticationException("登录失败，您的帐号已被禁用");
-		}
-		if (!user.isAccountNonExpired()) {
-			throw new CustomAuthenticationException("登录失败，您的帐号已过期");
-		}
-		if (!user.isCredentialsNonExpired()) {
-			throw new CustomAuthenticationException("登录失败，您的密码已过期");
-		}
-		if (!user.isAccountNonLocked()) {
-			throw new CustomAuthenticationException("帐号已被锁定，请您明天再试或联系系统管理员解锁");
-		}
+//		if (!user.isEnabled()) {
+//			throw new CustomAuthenticationException("登录失败，您的帐号已被禁用");
+//		}
+//		if (!user.isAccountNonExpired()) {
+//			throw new CustomAuthenticationException("登录失败，您的帐号已过期");
+//		}
+//		if (!user.isCredentialsNonExpired()) {
+//			throw new CustomAuthenticationException("登录失败，您的密码已过期");
+//		}
+//		if (!user.isAccountNonLocked()) {
+//			throw new CustomAuthenticationException("帐号已被锁定，请您明天再试或联系系统管理员解锁");
+//		}
 //		if (!user.hasAuthority("ROLE_VISIT_MANAGE")) {
 //			throw new CustomAuthenticationException("登录失败，您的帐号没有权限访问该系统");
 //		}

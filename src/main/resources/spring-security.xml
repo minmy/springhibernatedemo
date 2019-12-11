@@ -25,11 +25,6 @@
 		<csrf request-matcher-ref="customRequiresCsrfMatcher" />
 	</http>
 
-	<!-- 认证管理器 -->
-	<authentication-manager alias="authenticationManager">
-		<authentication-provider ref="customAuthenticationProvider" />
-	</authentication-manager>
-
 	<!-- 认证入口点 -->
 	<beans:bean id="customAuthenticationEntryPoint" class="com.xinmy.core.security.CustomAuthenticationEntryPoint">
 		<beans:constructor-arg name="loginUrl" value="/login.action" />
@@ -38,10 +33,15 @@
 	<!-- 认证过滤器 -->
 	<beans:bean id="customAuthenticationFilter" class="com.xinmy.core.security.CustomAuthenticationFilter">
 		<beans:constructor-arg name="filterProcessesUrl" value="/doLogin.action" />
+		<beans:property name="authenticationManager" ref="authenticationManager" />
 		<beans:property name="authenticationSuccessHandler" ref="customAuthenticationSuccessHandler" />
 		<beans:property name="authenticationFailureHandler" ref="customAuthenticationFailureHandler" />
-		<beans:property name="authenticationManager" ref="authenticationManager" />
 	</beans:bean>
+
+	<!-- 认证管理器 -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="customAuthenticationProvider" />
+	</authentication-manager>
 
 	<!-- 认证服务提供者 -->
 	<beans:bean id="customAuthenticationProvider" class="com.xinmy.core.security.CustomAuthenticationProvider" />
